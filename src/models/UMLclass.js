@@ -1,24 +1,24 @@
 let mongoose = require("mongoose");
 
-const umlclassShema = mongoose.Schema({
-  classname:{type:String},
-  owner:{type:String, required:true},
-  position:{
-    x:{type:Number},
-    y:{type:Number},
-    z:{type:Number},
+const umlclassShema = new mongoose.Schema({
+  classname: {type:String},
+  owner: {type:mongoose.Types.ObjectId, ref:'users', required:true},
+  position: {
+    x: {type: Number, required:true},
+    y: {type: Number, required:true},
+    z: {type: Number, required:true}
   },
   rotation:{
-    x:{type:Number},
-    y:{type:Number},
-    z:{type:Number},
+    x:{type:Number, required:true},
+    y:{type:Number, required:true},
+    z:{type:Number, required:true},
   },
   scale:{
-    x:{type:Number},
-    y:{type:Number},
-    z:{type:Number},
+    x:{type:Number, required:true},
+    y:{type:Number, required:true},
+    z:{type:Number, required:true},
   },
-  color:{type:String},
+  color: {type:String},
 });
 
 const umlclass = mongoose.model('umlclasses' , umlclassShema);

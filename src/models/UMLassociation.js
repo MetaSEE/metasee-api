@@ -1,8 +1,8 @@
 let mongoose = require('mongoose');
 
-const umlassSchema = mongoose.Schema({
-  umlclass_start:{type:String},
-  umlclass_end:{type:String},
+const umlassSchema = new mongoose.Schema({
+  umlclass_start:{type:mongoose.Types.ObjectId, ref:'umlclasses'},
+  umlclass_end:{type:mongoose.Types.ObjectId, ref:'umlclasses'},
 });
 
 const umlassociation = mongoose.model('umlassociations' , umlassSchema);

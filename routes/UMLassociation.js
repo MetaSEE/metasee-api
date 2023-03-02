@@ -4,7 +4,8 @@ let umlassociation = require('../src/controller/UMLassociation.ctrl');
 
 router
   .post('/umlassociation' , umlassociation.create)
-  .get('/umlassociation' , umlassociation.read)
+  .get('/umlassociations' , umlassociation.read)
+  .get('/umlassociation/search' , umlassociation.readByUMLclass)
   .get('/umlassociation/:id' , umlassociation.readById)
   .put('/umlassociation/:id' , umlassociation.updateById)
   .delete('/umlassociation/:id' , umlassociation.deleteById)

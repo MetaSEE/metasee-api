@@ -9,7 +9,8 @@ var router = express.Router();
 
 router
   .post('/umlclass' , umlclass.create)  
-  .get('/umlclass' , umlclass.read)
+  .get('/umlclasses' , umlclass.read)
+  .get('/umlclass/search' , umlclass.readByUser)
   .get('/umlclass/:id' , umlclass.readById)
   .put('/umlclass/:id' , umlclass.updateById)
   .delete('/umlclass/:id' , umlclass.deleteById)
