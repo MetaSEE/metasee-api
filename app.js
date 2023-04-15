@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var umlclassRouter = require('./routes/UMLclass');
 var umlassociationRouter = require('./routes/UMLassociation');
+var virtualworldRouter = require('./routes/VirtualWorld');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/', indexRouter);
 app.use(usersRouter);
 app.use(umlclassRouter);
 app.use(umlassociationRouter);
+app.use(virtualworldRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -15,7 +15,7 @@ This project is a API and it aims provide data for MetaSEE virtual worlds.
 | DELETE | /umlclass/**[id]** | It deletes a uml class by [id]|
 
 ### JSON Schema
-``` json
+```javascript
 {
 	_id: ObjectId,
 	classname: String,
@@ -47,7 +47,7 @@ This project is a API and it aims provide data for MetaSEE virtual worlds.
 | DELETE | /umlassociation/**[id]** | It deletes a uml association by [id]|
 
 ### JSON Schema
-``` json
+```javascript
 {
 	_id: ObjectId,
 	umlclass_start: ObjectId,
