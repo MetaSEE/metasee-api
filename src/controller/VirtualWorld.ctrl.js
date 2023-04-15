@@ -48,7 +48,16 @@ class VirtualWorldCtrl {
     const {id} = req.params;
     virtualworld
       .findById(id)
-      .populate('owner')    
+      .populate([
+        {
+          path: 'assets.umlclasses',
+          model: 'umlclasses',
+        },
+        {
+          path: 'owner',
+          model: 'users',
+        },
+      ])    
       .exec((err,virtualworld)=>{
         err ? res.status(400).send(`${err.message}`) : res.status(200).send(virtualworld);
       });
