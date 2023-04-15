@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 
 const virtualworldShema = new mongoose.Schema({
-  _id: {type: mongoose.Schema.Types.ObjectId, required: true},
+  // _id: {type: mongoose.Schema.Types.ObjectId},
   name: {type:String},
   owner: {type:mongoose.Types.ObjectId, ref:'users', required:true},
   thumb: {type:String},
