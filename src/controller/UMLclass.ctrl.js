@@ -63,10 +63,20 @@ class UMLclassCtrl {
   };
 
   static readByUser = (req,res)=>{
-    const user = req.query.user;
+    const user = req.query.id;
     umlclass
       .find({'owner':user})
       .populate('owner')
+      .exec((err,umlclass)=>{
+        err ? res.status(400).send(`${err.message}`) : res.status(200).send(umlclass);
+      });
+  }
+
+  static readByVirtualWorld = (req,res)=>{
+    const virtualworld = req.query.id;
+    umlclass
+      .find({'virtualworld':virtualworld})
+      .populate('virtualworld')
       .exec((err,umlclass)=>{
         err ? res.status(400).send(`${err.message}`) : res.status(200).send(umlclass);
       });

@@ -8,11 +8,15 @@ This project is a API and it aims provide data for MetaSEE virtual worlds.
 | Verb | URL | Description
 | - | - | - |
 | GET | /umlclasses | It returns all uml classes |
-| GET | /umlclass/**[id]** | It returns a uml class by [id] |
-| GET | /umlclass/search?user=**[user]** | It returns all uml classes by [user] |
+| GET | /umlclass/**[_id]** | It returns a uml class by [_id] |
+| GET | /umlclass/user?id=**[id_user]** | It returns all uml classes by [id_user] |
+| GET | /umlclass/vw?id=**[id_virtualworld]** | It returns all uml classes by [virtualworld] |
+| GET | /umlclass/id/**[id]** | It returns a uml classes by [id] defined in the platform |
 | POST | /umlclass | It creates a uml class and it returns the new uml class created |
 | PUT | /umlclass | It updates a uml class |
-| DELETE | /umlclass/**[id]** | It deletes a uml class by [id]|
+| PUT | /umlclass/id/**[id]** | It updates a uml classes by [id] defined in the platform |
+| DELETE | /umlclass/id/**[id]** | It deletes a uml class by [id] defined in the platform|
+| DELETE | /umlclass/**[_id]** | It deletes a uml class by [_id]|
 
 ### JSON Schema
 ```javascript
