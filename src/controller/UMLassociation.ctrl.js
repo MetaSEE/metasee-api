@@ -35,7 +35,8 @@ class UMLassociationCtrl {
   static readByUMLclass = (req,res)=>{
     const umlclass_start = req.query.startclass;
     const umlclass_end = req.query.endclass;
-
+    const vw = req.query.vw;
+    
     if(umlclass_start){
       umlassociation
       .find({'umlclass_start':umlclass_start})
@@ -54,6 +55,17 @@ class UMLassociationCtrl {
         .exec((err,umlass)=>{
           err ? res.status(500).send(`${err.message}`) : res.status(200).send(umlass) ;
         });      
+    }
+
+    if(vw){
+      umlassociation
+      .find({'virtualworld':vw})
+      .populate('umlclass_start')
+      .populate('umlclass_end')
+      .populate('virtualworld')
+      .exec((err,umlass)=>{
+        err ? res.status(500).send(`${err.message}`) : res.status(200).send(umlass) ;
+      });
     }
   }
 

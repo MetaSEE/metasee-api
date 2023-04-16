@@ -46,6 +46,7 @@ This project is a API and it aims provide data for MetaSEE virtual worlds.
 | GET | /umlassociation/**[id]** | It returns a uml association by [id] |
 | GET | /umlassociation/search?startclass=**[startclass]** | It returns all uml associations by [startclass] |
 | GET | /umlassociation/search?endclass=**[endclass]** | It returns all uml associations by [endclass] |
+| GET | /umlassociation/search?vw=**[virtualworld]** | It returns all uml associations by [virtualworld] |
 | POST | /umlassociation | It creates a uml association and it returns the new association class created|
 | PUT | /umlassociation | It updates a uml association |
 | DELETE | /umlassociation/**[id]** | It deletes a uml association by [id]|
