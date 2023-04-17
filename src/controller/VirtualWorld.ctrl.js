@@ -60,7 +60,7 @@ class VirtualWorldCtrl {
       ])
       .sort({ createdAt: 'desc' })
       .exec((err,virtualworld)=>{
-        err ? res.status(400).send(`${err.message}`) : res.setHeader('Access-Control-Allow-Origin', '*').res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS').res.setHeader('Access-Control-Allow-Headers', 'Content-Type').res.status(200).send(virtualworld);
+        err ? res.status(400).send(`${err.message}`) : res.status(200).send(virtualworld);
       });
   };
 
