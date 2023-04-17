@@ -32,6 +32,18 @@ class UMLassociationCtrl {
       });
   }
 
+  static readByIdUMLassociation = (req,res)=>{
+    const {id} = req.params;
+    umlassociation
+      .find({"id":id})
+      .populate('umlclass_start')
+      .populate('umlclass_end')
+      .populate('virtualworld')
+      .exec((err,umlass)=>{
+        err ? res.status(500).send(`${err.message}`) : res.status(200).send(umlass) ;
+      });
+  }
+
   static readByUMLclass = (req,res)=>{
     const umlclass_start = req.query.startclass;
     const umlclass_end = req.query.endclass;
@@ -81,6 +93,13 @@ class UMLassociationCtrl {
   static deleteById = (req,res)=>{
     const {id} = req.params;
     umlassociation.findByIdAndDelete(id,(err)=>{
+      err ? res.status(500).send(`${err.message}`) : res.status(200).send(`UML association deleted successfully!`) ;
+    });
+  }
+
+  static deleteByIdUMLassociation = (req,res)=>{
+    const {id} = req.params;
+    umlassociation.findOneAndDelete({'id':id},(err)=>{
       err ? res.status(500).send(`${err.message}`) : res.status(200).send(`UML association deleted successfully!`) ;
     });
   }

@@ -43,13 +43,15 @@ This project is a API and it aims provide data for MetaSEE virtual worlds.
 | Verb | URL | Description
 | - | - | - |
 | GET | /umlassociations | It returns all uml associations |
-| GET | /umlassociation/**[id]** | It returns a uml association by [id] |
+| GET | /umlassociation/id/**[id_association]** | It returns a uml association by [id_association] |
+| GET | /umlassociation/**[_id]** | It returns a uml association by [_id] |
 | GET | /umlassociation/search?startclass=**[startclass]** | It returns all uml associations by [startclass] |
 | GET | /umlassociation/search?endclass=**[endclass]** | It returns all uml associations by [endclass] |
 | GET | /umlassociation/search?vw=**[virtualworld]** | It returns all uml associations by [virtualworld] |
 | POST | /umlassociation | It creates a uml association and it returns the new association class created|
 | PUT | /umlassociation | It updates a uml association |
-| DELETE | /umlassociation/**[id]** | It deletes a uml association by [id]|
+| DELETE | /umlassociation/id/**[id]** | It deletes a uml association by [id_umlassociation]|
+| DELETE | /umlassociation/**[_id]** | It deletes a uml association by [_id]|
 
 ### JSON Schema
 ```javascript
