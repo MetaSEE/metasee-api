@@ -10,6 +10,7 @@ var router = express.Router();
 router
   .post('/virtualworld' , virtualworld.create)  
   .get('/virtualworlds' , virtualworld.read)
+  .get('/virtualworlds/desc' , virtualworld.readByDesc)
   .get('/virtualworld/search' , virtualworld.readByUser)
   .get('/virtualworld/:id' , virtualworld.readById)
   .put('/virtualworld/:id' , virtualworld.updateById)

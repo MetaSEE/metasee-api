@@ -64,3 +64,9 @@ This project is a API and it aims provide data for MetaSEE virtual worlds.
 - `_id` : uml association id
 - `umlclass_start` : uml association starts at the uml class
 - `umlclass_end` : uml association ends at the uml class
+
+## Virtual World
+| Verb | URL | Description
+| - | - | - |
+| GET | /virtualwords | It returns all virtualworlds |
+| GET | /virtualwords/desc | It returns all virtualworlds by desc |

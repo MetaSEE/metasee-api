@@ -39,6 +39,26 @@ class VirtualWorldCtrl {
           model: 'users',
         },
       ])
+      .sort({ createdAt: 'asc' })
+      .exec((err,virtualworld)=>{
+        err ? res.status(400).send(`${err.message}`) : res.status(200).send(virtualworld);
+      });
+  };
+
+  static readByDesc = (req,res)=>{
+    virtualworld
+      .find()
+      .populate([
+        {
+          path: 'assets.umlclasses',
+          model: 'umlclasses',
+        },
+        {
+          path: 'owner',
+          model: 'users',
+        },
+      ])
+      .sort({ createdAt: 'desc' })
       .exec((err,virtualworld)=>{
         err ? res.status(400).send(`${err.message}`) : res.status(200).send(virtualworld);
       });
