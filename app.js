@@ -32,7 +32,6 @@ var cors = require("cors");
 //     next();
 // });
 var corsOptions = {
-  // origin: 'http://metasee-virtualworld.herokuapp.com/',
   origin: '*',
   optionsSuccessStatus: 200
 }
